@@ -16,7 +16,7 @@ library(plotly)
 
 
 #load availability data 
-availability_data <- read_xlsx("/data/data.xlsx", sheet = "availability")
+availability_data <- read_xlsx("data/data.xlsx", sheet = "availability")
 long_availability_data <- pivot_longer(availability_data, cols=2:18, names_to = "Country", values_to = "availability")
 long_availability_data[long_availability_data == 0] <- NA
 long_availability_data <- na.omit(long_availability_data)
